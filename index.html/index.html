@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edmar Bulawin | Player Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="scan" aria-hidden="true"></div>
+  <div class="xh" id="xh" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+
+  <!-- ===== HUD ===== -->
+  <header class="hud">
+    <a href="#home" class="tag">ET<span>//</span>PROFILE</a>
+    <div class="xp" title="Complete quests to fill your XP">
+      <span class="xp-label">QUEST XP <b id="xpPct">0</b>%</span>
+      <div class="xp-track"><div class="xp-fill" id="xpFill"></div></div>
+    </div>
+    <nav>
+      <a href="#skills">Attributes</a>
+      <a href="#inventory">Inventory</a>
+      <a href="#boss">Boss</a>
+      <a href="#loot">Loot</a>
+      <a href="#contact">Party</a>
+    </nav>
+    <div class="sess">⏱ <b id="sess">00:00</b></div>
+    <button class="snd" id="snd" aria-label="Toggle sound effects" title="Sound effects (off)">🔇</button>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+      <div class="portrait" id="portrait" tabindex="0" role="button" aria-label="Click the player portrait">
+        <div class="pframe">
+          <!-- Your photo: keep rene.jpg in the same folder -->
+          <img src="rene.jpg" alt="Photo of Edmar T. Bulawin Jr." id="photoImg" draggable="false" />
+          <span class="online">● ONLINE</span>
+          <span class="clickme">▶ CLICK PLAYER</span>
+        </div>
+        <div class="pmeta">
+          <b>EDMAR T. BULAWIN JR.</b>
+          <small>3RD YEAR · UNIVERSITY OF CEBU</small>
+        </div>
+      </div>
+
+      <div class="intro">
+        <p class="eyebrow">// PLAYER PROFILE · LOADED 100%</p>
+        <h1 class="glitch" data-text="EDMAR">EDMAR<span>T. BULAWIN JR.</span></h1>
+        <p class="cls">CLASS &gt; <span id="typed"></span><span class="caret">_</span></p>
+
+        <div class="term">
+          <p><i>&gt;</i> status: <b>3rd-year student</b> at the University of Cebu</p>
+          <p><i>&gt;</i> passion: <b>tech, UI/UX design &amp; software development</b></p>
+          <p><i>&gt;</i> mission: turning creative concepts into smooth, user-friendly digital experiences</p>
+          <p><i>&gt;</i> fuel: curiosity and continuous learning</p>
+          <p><i>&gt;</i> goal: become a skilled <b>UI/UX designer &amp; software engineer</b> crafting impactful web and mobile solutions</p>
+        </div>
+
+        <div class="pills">
+          <div><b data-count="20">0</b><small>LEVEL (age)</small></div>
+          <div><b data-count="12">0</b><small>PROJECTS</small></div>
+          <div><b data-count="999">0</b><small>COFFEES ☕</small></div>
+        </div>
+
+        <div class="cta">
+          <a href="#skills" class="btn red">▶ START QUEST</a>
+          <a href="#boss" class="btn line">⚔ FIGHT THE BOSS</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INFO STRIP ===== -->
+    <section class="strip rev">
+      <div><small>SERVER</small><b>Mambaling, Cebu City 📍</b></div>
+      <div><small>MAJOR</small><b>Information Technology 🎓</b></div>
+      <div><small>LANGUAGE PACK</small><b>English · Filipino · Bisaya 💬</b></div>
+      <div><small>MAIN QUEST</small><b>Software Developer 🎯</b></div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="panel rev">
+      <h2><i>01 //</i> ATTRIBUTES <small>click a bar to level it up ⚡</small></h2>
+      <div class="skills">
+        <div class="skill" data-level="90" tabindex="0" role="button"><span>HTML &amp; CSS</span><div class="segs"></div><em>90</em></div>
+        <div class="skill" data-level="75" tabindex="0" role="button"><span>JavaScript</span><div class="segs"></div><em>75</em></div>
+        <div class="skill" data-level="80" tabindex="0" role="button"><span>Problem Solving</span><div class="segs"></div><em>80</em></div>
+        <div class="skill" data-level="85" tabindex="0" role="button"><span>Teamwork</span><div class="segs"></div><em>85</em></div>
+        <div class="skill" data-level="70" tabindex="0" role="button"><span>Creative Design</span><div class="segs"></div><em>70</em></div>
+      </div>
+    </section>
+
+    <!-- ===== INVENTORY ===== -->
+    <section id="inventory" class="panel rev">
+      <h2><i>02 //</i> INVENTORY <small>hobbies &amp; interests · inspect 3 items</small></h2>
+      <div class="inv">
+        <div class="slots">
+          <button class="slot legendary" data-name="Gaming" data-rarity="LEGENDARY" data-desc="Hooked on Valorant, CrossFire, and Mobile Legends for the intense teamwork and clutch moments.">🎮<span>Gaming</span></button>
+          <button class="slot epic" data-name="Music" data-rarity="EPIC" data-desc="Always on repeat: Justin Bieber and Joji, blending smooth Pop, R&amp;B, and soulful lo-fi vibes.">🎵<span>Music</span></button>
+          <button class="slot epic" data-name="Photography" data-rarity="EPIC" data-desc="Capturing life's moments frame by frame, loving creative photo editing, sharp angles, and visual storytelling.">📸<span>Photography</span></button>
+          <button class="slot rare" data-name="Badminton" data-rarity="RARE" data-desc="Always up for a game of badminton: fast-paced, high energy, and pure fun.">🏸<span>Sports</span></button>
+          <button class="slot legendary" data-name="Technology" data-rarity="LEGENDARY" data-desc="Fascinated by building systems, coding projects, and modern tech trends.">💻<span>Technology</span></button>
+          <button class="slot rare" data-name="Travel" data-rarity="RARE" data-desc="Loving new adventures, discovering hidden spots, and making memories along the way.">✈️<span>Travel</span></button>
+          <button class="slot common" data-name="Food" data-rarity="COMMON" data-desc="Fueled by good meals, sweet treats, and exploring new food places.">🍜<span>Food</span></button>
+          <button class="slot rare" data-name="Movies" data-rarity="RARE" data-desc="Enjoying late night movie marathons and unforgettable cinematic experiences.">🎬<span>Movies</span></button>
+          <button class="slot common" data-name="Reading" data-rarity="COMMON" data-desc="Finding focus and inspiration, one page at a time.">📚<span>Reading</span></button>
+        </div>
+        <aside class="detail" id="detail" aria-live="polite">
+          <small id="dRarity">ITEM DETAILS</small>
+          <h3 id="dName">Select an item</h3>
+          <p id="dDesc">👈 Click any slot to inspect it.</p>
+          <div class="dcount">Inspected: <b id="dCount">0</b>/9</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== BOSS ===== -->
+    <section id="boss" class="panel rev">
+      <h2><i>03 //</i> BOSS FIGHT <small>two truths &amp; a lie</small></h2>
+      <div class="boss">
+        <div class="boss-side">
+          <div class="boss-av" id="bossAv">👾</div>
+          <small>BOSS: THE LIAR</small>
+          <div class="hp"><div class="hp-fill" id="bossHp"></div></div>
+          <div class="hearts" id="hearts" aria-label="Your lives">❤️❤️❤️</div>
+        </div>
+        <div class="atk">
+          <p class="q">One of these is a <b>lie</b>. Pick your attack, find it before you run out of lives!</p>
+          <button class="move" data-lie="false">⚔ I can solve a Rubik's cube in under 2 minutes.</button>
+          <button class="move" data-lie="true">⚔ I scam some kids or older players in Roblox.</button>
+          <button class="move" data-lie="false">⚔ I once met a famous person by accident.</button>
+          <p class="result" id="bossResult" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOOT ===== -->
+    <section id="loot" class="panel rev center">
+      <h2><i>04 //</i> LOOT DROP <small>open it!</small></h2>
+      <button class="chest" id="chest" aria-label="Open loot chest">🎁</button>
+      <p class="loot-text" id="lootText" aria-live="polite">Tap the chest to see what's inside.</p>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="panel rev">
+      <h2><i>05 //</i> JOIN MY PARTY <small>thanks for stopping by!</small></h2>
+      <div class="party">
+        <a class="pcard" href="mailto:edmarbulawin59@gmail.com"><span>✉️</span><b>Email</b><small>edmarbulawin59@gmail.com</small><em>SEND INVITE →</em></a>
+        <a class="pcard" href="https://github.com/edmartyy" target="_blank" rel="noopener"><span>🐙</span><b>GitHub</b><small>@edmartyy</small><em>VIEW CODE →</em></a>
+        <a class="pcard" href="https://www.facebook.com/edmartyy" target="_blank" rel="noopener"><span>📘</span><b>Facebook</b><small>@edmartyy</small><em>ADD FRIEND →</em></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Built with ☕, HTML, CSS &amp; JavaScript by <b>Edmartyy</b> · 2026 · GG WP</footer>
+
+  <!-- Quest log -->
+  <aside class="quests" id="quests">
+    <button class="q-head" id="qHead" aria-expanded="true">QUEST LOG <b id="qCount">0/6</b> <span>▾</span></button>
+    <ul id="qList"></ul>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="lvl" id="lvl" aria-hidden="true"><b>LEVEL UP!</b><span>All quests complete. Thanks for staying!</span></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
